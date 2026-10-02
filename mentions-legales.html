@@ -7,31 +7,34 @@
   <meta name="description" content="Mentions légales du portfolio d'Emilie Borghesi : éditrice, hébergement, contenus et données personnelles.">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
-  <!-- Polices : Unbounded (titres), Caveat (mots d'accent), Outfit (texte) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Outfit:wght@400;500;600&amp;family=Unbounded:wght@600&amp;display=swap">
 
   <link rel="stylesheet" href="css/style.css">
-  <!-- Indique au CSS que le JavaScript fonctionne (pour replier le menu sur téléphone) -->
-  <script>document.documentElement.classList.add("js");</script>
+  <script src="js/theme.js"></script>
   <script src="js/script.js" defer></script>
 </head>
 <body class="page page--blue">
   <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-  <!-- EN-TÊTE (identique sur toutes les pages) -->
   <header class="header" id="haut">
     <div class="container header__inner">
       <a class="logo" href="index.html" aria-label="Emilie Borghesi, retour à l'accueil">
         <span class="logo__first">Emilie</span>
         <span class="logo__last">Borghesi</span>
       </a>
-      <nav class="nav" aria-label="Navigation principale">
-        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+      <div class="header__tools">
+        <button class="round-button theme-toggle" type="button" aria-label="Passer au thème nuit">
+          <svg class="theme-toggle__moon" width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-toggle__sun" width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="round-button nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
           <span aria-hidden="true">☰</span>
         </button>
-        <ul class="nav__list" id="menu">
+      </div>
+      <nav class="nav" id="menu" aria-label="Navigation principale">
+        <ul class="nav__list">
           <li class="nav__item"><a class="nav__link" href="index.html">Accueil</a></li>
           <li class="nav__item"><a class="nav__link" href="projets.html">Projets</a></li>
           <li class="nav__item"><a class="nav__link" href="a-propos.html">À propos</a></li>
@@ -70,7 +73,6 @@
     </section>
   </main>
 
-  <!-- PIED DE PAGE (identique sur toutes les pages) -->
   <div class="scallop scallop--up" aria-hidden="true"></div>
   <footer class="footer">
     <div class="container footer__inner">

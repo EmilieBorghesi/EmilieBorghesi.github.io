@@ -1,24 +1,5 @@
-/* ==========================================================================
-   Portfolio d'Emilie Borghesi — feuille de style
-
-   Méthode BEM : .bloc, .bloc__element, .bloc--variante
-   Mobile d'abord : les styles de base sont ceux du téléphone ;
-   les @media (min-width) adaptent ensuite aux écrans plus larges.
-
-   Sommaire
-   1. Variables            7. Formes d'images, étiquettes, autocollants
-   2. Base                 8. Cartes et sections de l'accueil
-   3. En-tête et menu      9. Page Projets
-   4. Boutons             10. Page À propos
-   5. Titres et notes     11. Page Contact
-   6. Bandeau de page     12. Pied de page
-   ========================================================================== */
-
-/* 1. Variables ------------------------------------------------------------ */
-
 :root {
-  /* Fonds pastel */
-  --cream: #fff8e7;
+    --cream: #fff8e7;
   --blue: #bfdff5;
   --pink: #ffc9dc;
   --violet: #d9ccf7;
@@ -26,30 +7,50 @@
   --yellow: #ffe9a3;
   --orange: #ffd2b0;
 
-  /* Contours plus soutenus (jamais pour du texte) */
-  --blue-strong: #6fb4e8;
+    --blue-strong: #6fb4e8;
   --pink-strong: #f58fb4;
   --violet-strong: #a98beb;
   --green-strong: #6cc187;
   --yellow-strong: #f2c24b;
   --orange-strong: #f5a56b;
 
-  /* Textes */
-  --ink: #2b2540;
+    --ink: #2b2540;
   --ink-soft: #5a5470;
   --accent: #5b3fd0;
   --white: #fff;
 
-  /* Polices */
-  --font-title: "Unbounded", sans-serif;
+    --font-title: "Unbounded", sans-serif;
   --font-accent: "Caveat", cursive;
   --font-text: "Outfit", system-ui, sans-serif;
 
-  /* Couleur du bandeau de la page (changée par .page--xxx) */
+  --line: #c9bfa3;
   --page-color: var(--blue);
 }
 
-/* 2. Base ----------------------------------------------------------------- */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --cream: #262338;
+  --blue: #2f4a66;
+  --pink: #6b3a52;
+  --violet: #4a3f78;
+  --green: #2b5341;
+  --yellow: #5c4c22;
+  --orange: #6a422c;
+
+  --blue-strong: #6fa6d6;
+  --pink-strong: #d987a6;
+  --violet-strong: #a48fe0;
+  --green-strong: #6fb589;
+  --yellow-strong: #d9b14f;
+  --orange-strong: #dc9a69;
+
+  --ink: #f4ecdd;
+  --ink-soft: #cbc3de;
+  --accent: #cdbfff;
+  --white: #332f4b;
+  --line: #5a5470;
+}
 
 *,
 *::before,
@@ -85,7 +86,6 @@ a:hover {
   color: var(--accent);
 }
 
-/* Contour bien visible pour la navigation au clavier */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -109,13 +109,11 @@ textarea:focus-visible {
   flex: 1;
 }
 
-/* Largeur maximale du contenu, centrée, avec une marge sur les côtés */
 .container {
   width: min(100% - 2.5rem, 70rem);
   margin-inline: auto;
 }
 
-/* Lien « Aller au contenu » : caché, il apparaît à la touche Tab */
 .skip-link {
   position: absolute;
   top: 0.5rem;
@@ -133,7 +131,6 @@ textarea:focus-visible {
   transform: none;
 }
 
-/* Bord festonné entre une zone colorée et le fond crème */
 .scallop {
   height: 28px;
   background-repeat: repeat-x;
@@ -148,8 +145,6 @@ textarea:focus-visible {
   background-image: radial-gradient(circle at 28px 28px, var(--blue) 27.5px, transparent 28px);
 }
 
-/* 3. En-tête et menu ------------------------------------------------------ */
-
 .header {
   background: var(--page-color);
 }
@@ -158,9 +153,60 @@ textarea:focus-visible {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   gap: 0.25rem 1rem;
   padding-block: 0.75rem;
+}
+
+.header__tools {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.round-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.theme-toggle {
+  display: none;
+}
+
+.js .theme-toggle {
+  display: inline-flex;
+}
+
+.theme-toggle__moon,
+.theme-toggle__sun {
+  fill: var(--yellow-strong);
+}
+
+.theme-toggle__sun {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle__sun {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle__moon {
+  display: none;
+}
+
+.nav-toggle {
+  display: none;
 }
 
 .logo {
@@ -186,24 +232,7 @@ textarea:focus-visible {
 }
 
 .nav {
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.nav__toggle {
-  display: none;
-  width: 3rem;
-  height: 3rem;
-  padding: 0;
-  border: 2px solid var(--ink);
-  border-radius: 50%;
-  background: var(--white);
-  color: var(--ink);
-  font-size: 1.4rem;
-  line-height: 1;
-  cursor: pointer;
+  flex-basis: 100%;
 }
 
 .nav__list {
@@ -237,27 +266,37 @@ textarea:focus-visible {
   text-underline-offset: 0.45em;
 }
 
-/* Sur téléphone, quand le JavaScript fonctionne, le menu se replie
-   derrière un bouton. Sans JavaScript, les liens restent visibles. */
 @media (max-width: 47.99em) {
-  .js .nav__toggle {
+  .js .nav-toggle {
+    display: inline-flex;
+  }
+
+  .js .nav {
+    display: none;
+  }
+
+  .js .nav--open {
     display: block;
   }
 
   .js .nav__list {
-    display: none;
     flex-direction: column;
     align-items: stretch;
-    width: 100%;
     padding-block: 0.5rem;
-  }
-
-  .js .nav--open .nav__list {
-    display: flex;
   }
 }
 
-/* 4. Boutons -------------------------------------------------------------- */
+@media (min-width: 48em) {
+  .nav {
+    flex: 1;
+    order: 2;
+  }
+
+  .header__tools {
+    order: 3;
+    margin-left: 0;
+  }
+}
 
 .button {
   display: inline-flex;
@@ -288,7 +327,6 @@ textarea:focus-visible {
   color: var(--ink);
 }
 
-/* Sur un fond de couleur, l'ombre du bouton devient blanche */
 .button--on-color {
   box-shadow: 4px 4px 0 var(--white);
 }
@@ -299,7 +337,6 @@ textarea:focus-visible {
   font-size: 1rem;
 }
 
-/* Au survol, le bouton « s'enfonce » comme un autocollant qu'on appuie */
 .button:hover {
   transform: translate(3px, 3px);
 }
@@ -318,8 +355,6 @@ textarea:focus-visible {
   box-shadow: 1px 1px 0 var(--white);
 }
 
-/* 5. Titres et notes ------------------------------------------------------ */
-
 .title {
   margin: 0;
   font-family: var(--font-title);
@@ -333,7 +368,6 @@ textarea:focus-visible {
 .title--m { font-size: clamp(1.25rem, 2.2vw, 1.5rem); }
 .title--s { font-size: 1.125rem; }
 
-/* Le mot écrit « à la main » dans un titre */
 .title__accent {
   margin-right: 0.12em;
   color: var(--accent);
@@ -349,7 +383,6 @@ textarea:focus-visible {
   color: var(--ink);
 }
 
-/* Petite note penchée, façon écriture au stylo */
 .note {
   display: flex;
   align-items: center;
@@ -366,8 +399,6 @@ textarea:focus-visible {
 .note__arrow {
   width: 2.1rem;
 }
-
-/* 6. Bandeau de page (zone colorée sous l'en-tête) ------------------------ */
 
 .hero {
   padding-block: 1rem 3rem;
@@ -499,7 +530,6 @@ textarea:focus-visible {
   }
 }
 
-/* Variante simple : un titre centré (pages Projets et Contact) */
 .hero--simple .hero__inner {
   display: flex;
   flex-wrap: wrap;
@@ -512,9 +542,6 @@ textarea:focus-visible {
   flex: 0 1 40rem;
 }
 
-/* 7. Formes d'images, étiquettes, autocollants ---------------------------- */
-
-/* Une image dans une forme : arche, galet, feuille ou cercle */
 .shape {
   overflow: hidden;
   border: 4px solid var(--ink);
@@ -528,7 +555,6 @@ textarea:focus-visible {
   object-position: top;
 }
 
-/* Le portrait est centré dans sa forme */
 .hero__photo img,
 .about__photo img {
   object-position: center;
@@ -546,7 +572,6 @@ textarea:focus-visible {
 .shape--yellow { border-color: var(--yellow-strong); background: var(--yellow); }
 .shape--orange { border-color: var(--orange-strong); background: var(--orange); }
 
-/* Quatre images dans la même forme */
 .shape--grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -556,7 +581,6 @@ textarea:focus-visible {
 .shape--tilt-left { transform: rotate(-3deg); }
 .shape--tilt-right { transform: rotate(4deg); }
 
-/* Étiquette de catégorie */
 .tag {
   display: inline-flex;
   align-items: center;
@@ -576,7 +600,6 @@ textarea:focus-visible {
 .tag--yellow { background: var(--yellow); }
 .tag--orange { background: var(--orange); }
 
-/* Autocollants : liens vers les réseaux, mots penchés */
 .stickers {
   display: flex;
   flex-wrap: wrap;
@@ -615,8 +638,6 @@ a.sticker:hover {
 .sticker--orange { background: var(--orange); }
 .sticker--blue { background: var(--blue); }
 
-/* 8. Cartes et sections de l'accueil -------------------------------------- */
-
 .section {
   padding-block: 3.5rem;
 }
@@ -635,7 +656,6 @@ a.sticker:hover {
   text-align: center;
 }
 
-/* Grille qui passe toute seule de 1 à 2, 3 ou 4 colonnes */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -672,6 +692,14 @@ a.sticker:hover {
   background: var(--white);
 }
 
+[data-theme="dark"] .card__icon {
+  background: var(--ink);
+}
+
+[data-theme="dark"] .note__arrow {
+  filter: invert(1);
+}
+
 .card__text {
   margin: 0;
   font-size: 1rem;
@@ -685,13 +713,11 @@ a.sticker:hover {
 }
 
 @media (min-width: 60em) {
-  /* Une carte sur deux est décalée vers le bas : moins « aligné au cordeau » */
-  .card:nth-child(even) {
+    .card:nth-child(even) {
     margin-top: 1.75rem;
   }
 }
 
-/* Carte de projet sur l'accueil */
 .project-card {
   display: flex;
   flex-direction: column;
@@ -729,7 +755,6 @@ a.sticker:hover {
   }
 }
 
-/* Bandeau d'appel : « Parlons-en » */
 .cta {
   display: flex;
   flex-wrap: wrap;
@@ -786,8 +811,6 @@ a.sticker:hover {
   }
 }
 
-/* 9. Page Projets --------------------------------------------------------- */
-
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -821,7 +844,6 @@ a.sticker:hover {
   gap: 4rem;
 }
 
-/* Un projet : un grand panneau, texte d'un côté, image de l'autre */
 .project {
   --project-color: var(--blue);
   --project-strong: var(--blue-strong);
@@ -833,7 +855,6 @@ a.sticker:hover {
   background: var(--project-color);
 }
 
-/* Un projet masqué par les filtres */
 .project[hidden] {
   display: none;
 }
@@ -898,7 +919,6 @@ a.sticker:hover {
   object-position: top;
 }
 
-/* La capture du hub a un fond uni : on le prolonge derrière l'image */
 .project__media--hub {
   background: #bccad0;
 }
@@ -947,13 +967,11 @@ a.sticker:hover {
     padding: 2.75rem;
   }
 
-  /* Le panneau inversé : l'image passe à gauche */
-  .project--reverse .project__media {
+    .project--reverse .project__media {
     order: -1;
   }
 
-  /* Bord festonné vertical entre le texte et l'image */
-  .project__media::before {
+    .project__media::before {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -981,8 +999,6 @@ a.sticker:hover {
     padding: 2.5rem 3.25rem 2.5rem 2rem;
   }
 }
-
-/* 10. Page À propos ------------------------------------------------------- */
 
 .about {
   display: grid;
@@ -1071,7 +1087,7 @@ a.sticker:hover {
 .timeline {
   margin: 0;
   padding: 0;
-  border-bottom: 2px dashed #c9bfa3;
+  border-bottom: 2px dashed var(--line);
   list-style: none;
 }
 
@@ -1081,7 +1097,7 @@ a.sticker:hover {
   align-items: center;
   gap: 0.5rem 2rem;
   padding-block: 1.25rem;
-  border-top: 2px dashed #c9bfa3;
+  border-top: 2px dashed var(--line);
 }
 
 .timeline__date {
@@ -1092,8 +1108,6 @@ a.sticker:hover {
   flex: 1 1 20rem;
   margin: 0;
 }
-
-/* 11. Page Contact -------------------------------------------------------- */
 
 .contact {
   display: grid;
@@ -1205,8 +1219,6 @@ a.sticker:hover {
     padding: 2.5rem;
   }
 }
-
-/* 12. Pied de page -------------------------------------------------------- */
 
 .footer {
   background: var(--blue);
@@ -1344,7 +1356,6 @@ a.sticker:hover {
   }
 }
 
-/* Page « Mentions légales » : du texte simple */
 .legal {
   max-width: 44rem;
 }
@@ -1353,7 +1364,6 @@ a.sticker:hover {
   margin: 2rem 0 0.5rem;
 }
 
-/* Respecte le réglage « réduire les animations » du système */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

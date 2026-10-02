@@ -1,9 +1,26 @@
-/* Portfolio d'Emilie Borghesi — petits comportements du site.
-   Le site reste lisible et utilisable si ce fichier ne se charge pas. */
+const root = document.documentElement;
 
-/* 1. Menu sur téléphone : le bouton ouvre et ferme la liste des liens */
+const themeToggle = document.querySelector(".theme-toggle");
+
+function applyTheme(theme) {
+  root.dataset.theme = theme;
+  localStorage.setItem("theme", theme);
+  themeToggle.setAttribute(
+    "aria-label",
+    theme === "dark" ? "Passer au thème clair" : "Passer au thème nuit"
+  );
+}
+
+if (themeToggle) {
+  applyTheme(root.dataset.theme === "dark" ? "dark" : "light");
+
+  themeToggle.addEventListener("click", function () {
+    applyTheme(root.dataset.theme === "dark" ? "light" : "dark");
+  });
+}
+
 const nav = document.querySelector(".nav");
-const navToggle = document.querySelector(".nav__toggle");
+const navToggle = document.querySelector(".nav-toggle");
 
 if (nav && navToggle) {
   navToggle.addEventListener("click", function () {
@@ -13,7 +30,6 @@ if (nav && navToggle) {
   });
 }
 
-/* 2. Page Projets : les boutons de filtre affichent une catégorie à la fois */
 const filterButtons = document.querySelectorAll(".filters__button");
 const projects = document.querySelectorAll(".project");
 
@@ -32,8 +48,6 @@ filterButtons.forEach(function (button) {
   });
 });
 
-/* 3. Page Contact : le formulaire prépare un e-mail dans la messagerie du visiteur.
-   (GitHub Pages ne peut pas envoyer de message tout seul : pas de PHP.) */
 const form = document.querySelector(".form");
 
 if (form) {
