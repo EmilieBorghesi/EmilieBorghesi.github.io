@@ -1,14 +1,30 @@
 const root = document.documentElement;
 
+const texts = {
+  fr: {
+    toDark: "Passer au thème nuit",
+    toLight: "Passer au thème clair",
+    openMenu: "Ouvrir le menu",
+    closeMenu: "Fermer le menu",
+    mailSubject: "Message de ",
+  },
+  en: {
+    toDark: "Switch to night theme",
+    toLight: "Switch to light theme",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    mailSubject: "Message from ",
+  },
+};
+
+const text = texts[root.lang] || texts.fr;
+
 const themeToggle = document.querySelector(".theme-toggle");
 
 function applyTheme(theme) {
   root.dataset.theme = theme;
   localStorage.setItem("theme", theme);
-  themeToggle.setAttribute(
-    "aria-label",
-    theme === "dark" ? "Passer au thème clair" : "Passer au thème nuit"
-  );
+  themeToggle.setAttribute("aria-label", theme === "dark" ? text.toLight : text.toDark);
 }
 
 if (themeToggle) {
@@ -26,7 +42,7 @@ if (nav && navToggle) {
   navToggle.addEventListener("click", function () {
     const isOpen = nav.classList.toggle("nav--open");
     navToggle.setAttribute("aria-expanded", isOpen);
-    navToggle.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
+    navToggle.setAttribute("aria-label", isOpen ? text.closeMenu : text.openMenu);
   });
 }
 
@@ -58,7 +74,7 @@ if (form) {
     const email = form.elements.email.value;
     const message = form.elements.message.value;
 
-    const subject = "Message de " + name + " (portfolio)";
+    const subject = text.mailSubject + name + " (portfolio)";
     const body = message + "\n\n" + name + "\n" + email;
 
     window.location.href =
