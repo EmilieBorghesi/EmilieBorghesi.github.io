@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>À propos — Emilie Borghesi</title>
+  <meta name="description" content="Qui est Emilie Borghesi : sa façon de travailler, ses outils, son parcours et son CV à télécharger.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <!-- Polices : Unbounded (titres), Caveat (mots d'accent), Outfit (texte) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Outfit:wght@400;500;600&amp;family=Unbounded:wght@600&amp;display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Indique au CSS que le JavaScript fonctionne (pour replier le menu sur téléphone) -->
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="js/script.js" defer></script>
+</head>
+<body class="page page--pink">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- EN-TÊTE (identique sur toutes les pages) -->
+  <header class="header" id="haut">
+    <div class="container header__inner">
+      <a class="logo" href="index.html" aria-label="Emilie Borghesi, retour à l'accueil">
+        <span class="logo__first">Emilie</span>
+        <span class="logo__last">Borghesi</span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <ul class="nav__list" id="menu">
+          <li class="nav__item"><a class="nav__link" href="index.html">Accueil</a></li>
+          <li class="nav__item"><a class="nav__link" href="projets.html">Projets</a></li>
+          <li class="nav__item"><a class="nav__link" href="a-propos.html" aria-current="page">À propos</a></li>
+          <li class="nav__item"><a class="button button--primary button--on-color button--small" href="contact.html">Me contacter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page__main" id="contenu">
+
+    <section class="hero">
+      <div class="container about">
+        <!-- Pour mettre une vraie photo : remplace images/sticker-1.jpg par ta photo -->
+        <figure class="about__portrait">
+          <div class="about__photo shape shape--arch shape--violet shape--tilt-left">
+            <img src="images/sticker-1.jpg" alt="Autoportrait d'Emilie en sticker&nbsp;: un visage au trait avec des lunettes roses" width="480" height="480">
+          </div>
+          <figcaption class="note">
+            <img class="note__arrow" src="images/fleche-haut.svg" alt="" width="48" height="40">
+            moi, version sticker
+          </figcaption>
+        </figure>
+        <div class="about__text">
+          <p class="hero__hello">Enchantée&nbsp;!</p>
+          <h1 class="title title--l">Créative dans les idées, <em class="title__accent">rigoureuse</em> dans l'exécution.</h1>
+          <p class="about__paragraph">Je m'appelle Emilie, je suis étudiante en deuxième année de BUT MMI à l'IUT du Limousin, à Limoges. J'aime quand un design est beau et que tout y est à sa place&nbsp;: une grille nette, une hiérarchie lisible, des couleurs choisies.</p>
+          <p class="about__paragraph">Je travaille de la recherche à la maquette, puis jusqu'à l'intégration, pour que ce qui est dessiné soit vraiment ce qui est mis en ligne.</p>
+          <p class="about__paragraph">Et quand j'éteins Figma&nbsp;: Zelda, Persona ou Valorant, de la pop et du rock dans le casque, et un faible pour le hardware.</p>
+          <div class="about__actions">
+            <a class="button button--primary button--on-color" href="cv-emilie-borghesi.pdf" download><span aria-hidden="true">↓</span> Télécharger mon CV (PDF)</a>
+            <a class="button button--secondary" href="contact.html">Me contacter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="scallop scallop--down" aria-hidden="true"></div>
+
+    <section class="section" aria-labelledby="titre-methode">
+      <div class="container">
+        <h2 class="title title--l section__title" id="titre-methode">Ma façon de <em class="title__accent">travailler</em></h2>
+        <div class="cards">
+          <article class="card card--violet">
+            <h3 class="title title--s">Créative</h3>
+            <p class="card__text">Je cherche l'idée qui rend un projet reconnaissable, pas seulement joli.</p>
+          </article>
+          <article class="card card--green">
+            <h3 class="title title--s">Organisée</h3>
+            <p class="card__text">Calques nommés, fichiers rangés, planning tenu&nbsp;: on s'y retrouve tout de suite.</p>
+          </article>
+          <article class="card card--yellow">
+            <h3 class="title title--s">Rigoureuse</h3>
+            <p class="card__text">Grilles, alignements, contrastes&nbsp;: je vérifie les détails jusqu'au dernier pixel.</p>
+          </article>
+          <article class="card card--orange">
+            <h3 class="title title--s">Fancy</h3>
+            <p class="card__text">Une touche d'élégance dans chaque projet&nbsp;: couleurs douces, typographie soignée.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="titre-outils">
+      <div class="container">
+        <h2 class="title title--l section__title" id="titre-outils">Ma boîte à <em class="title__accent">outils</em></h2>
+        <div class="tools">
+          <div class="tools__group">
+            <h3 class="title title--s tools__title">Design</h3>
+            <ul class="pills pills--pink">
+              <li class="pills__item">Figma</li>
+              <li class="pills__item">Illustrator</li>
+              <li class="pills__item">Photoshop</li>
+            </ul>
+          </div>
+          <div class="tools__group">
+            <h3 class="title title--s tools__title">Web</h3>
+            <ul class="pills pills--green">
+              <li class="pills__item">HTML</li>
+              <li class="pills__item">CSS (BEM)</li>
+              <li class="pills__item">JavaScript</li>
+              <li class="pills__item">PHP</li>
+              <li class="pills__item">WordPress</li>
+            </ul>
+          </div>
+          <div class="tools__group">
+            <h3 class="title title--s tools__title">Vidéo et organisation</h3>
+            <ul class="pills pills--blue">
+              <li class="pills__item">Premiere Pro</li>
+              <li class="pills__item">DaVinci Resolve</li>
+              <li class="pills__item">Trello</li>
+            </ul>
+          </div>
+          <div class="tools__group">
+            <h3 class="title title--s tools__title">Langues</h3>
+            <ul class="pills pills--yellow">
+              <li class="pills__item">Anglais C1</li>
+              <li class="pills__item">Allemand B1</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="titre-parcours">
+      <div class="container">
+        <h2 class="title title--l section__title" id="titre-parcours">Mon <em class="title__accent">parcours</em></h2>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__date"><span class="tag tag--yellow">Depuis 2025</span></span>
+            <p class="timeline__text"><strong>BUT Métiers du multimédia et de l'internet</strong> — IUT du Limousin, Limoges, parcours Création numérique</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__date"><span class="tag tag--orange">2022 – 2026</span></span>
+            <p class="timeline__text"><strong>Équipière polyvalente, McDonald's</strong> — Lesparre-Médoc puis Limoges. Accueil des clients et formation des nouveaux équipiers.</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__date"><span class="tag tag--violet">2024</span></span>
+            <p class="timeline__text"><strong>Baccalauréat, mention Bien</strong> — Lycée Odilon Redon, Pauillac. Option européenne anglais, spécialités HGGSP et LLCE anglais.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="titre-cv">
+      <div class="container">
+        <div class="cta cta--green cta--centered">
+          <div class="cta__body">
+            <h2 class="title title--l" id="titre-cv">Tout mon parcours <em class="title__accent title__accent--ink">en une page.</em></h2>
+            <p class="cta__text">Formation, expériences, outils et coordonnées, dans un CV prêt à imprimer.</p>
+            <a class="button button--primary button--on-color" href="cv-emilie-borghesi.pdf" download><span aria-hidden="true">↓</span> Télécharger mon CV (PDF, 400 Ko)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIED DE PAGE (identique sur toutes les pages) -->
+  <div class="scallop scallop--up" aria-hidden="true"></div>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__columns">
+        <div class="footer__about">
+          <p class="footer__name">
+            <span class="footer__first">Emilie</span>
+            <span class="footer__last">Borghesi</span>
+            <img class="footer__flower" src="images/fleur-blanche.svg" alt="" width="40" height="40">
+          </p>
+          <p class="footer__pitch">Designer graphique &amp; UX/UI à Limoges. Disponible pour un stage en webdesign et des missions freelance.</p>
+          <a class="footer__email" href="mailto:emilie.borghesi@outlook.fr">emilie.borghesi@outlook.fr</a>
+        </div>
+
+        <nav class="footer__nav" aria-label="Plan du site">
+          <h2 class="footer__heading">Le site</h2>
+          <ul class="footer__links">
+            <li><a class="footer__link" href="index.html">Accueil</a></li>
+            <li><a class="footer__link" href="projets.html">Projets</a></li>
+            <li><a class="footer__link" href="a-propos.html">À propos</a></li>
+            <li><a class="footer__link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__social">
+          <h2 class="footer__heading">Me retrouver ailleurs</h2>
+          <ul class="stickers">
+            <li class="stickers__item"><a class="sticker sticker--pink" href="https://www.linkedin.com/in/emilie-borghesi">LinkedIn</a></li>
+            <li class="stickers__item"><a class="sticker sticker--yellow" href="https://www.behance.net/emilieborghesi2">Behance</a></li>
+            <li class="stickers__item"><a class="sticker sticker--violet" href="https://github.com/EmilieBorghesi">GitHub</a></li>
+            <li class="stickers__item"><a class="sticker sticker--green" href="https://www.instagram.com/emilieenmmi/">Instagram</a></li>
+            <li class="stickers__item"><a class="sticker sticker--orange" href="cv-emilie-borghesi.pdf" download>Mon CV (PDF)</a></li>
+          </ul>
+          <p class="note">
+            <img class="footer__cloud" src="images/nuage.svg" alt="" width="64" height="40">
+            à très vite&nbsp;!
+          </p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__legal">© 2026 Emilie Borghesi · <a href="mentions-legales.html">Mentions légales</a></p>
+        <a class="footer__top" href="#haut">Retour en haut <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

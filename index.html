@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emilie Borghesi — Designer graphique &amp; UX/UI</title>
+  <meta name="description" content="Portfolio d'Emilie Borghesi, étudiante en BUT MMI à Limoges : graphisme, UX/UI design et intégration web. Disponible en stage et en freelance.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <!-- Polices : Unbounded (titres), Caveat (mots d'accent), Outfit (texte) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Outfit:wght@400;500;600&amp;family=Unbounded:wght@600&amp;display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Indique au CSS que le JavaScript fonctionne (pour replier le menu sur téléphone) -->
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="js/script.js" defer></script>
+</head>
+<body class="page page--blue">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- EN-TÊTE (identique sur toutes les pages) -->
+  <header class="header" id="haut">
+    <div class="container header__inner">
+      <a class="logo" href="index.html" aria-label="Emilie Borghesi, retour à l'accueil">
+        <span class="logo__first">Emilie</span>
+        <span class="logo__last">Borghesi</span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <ul class="nav__list" id="menu">
+          <li class="nav__item"><a class="nav__link" href="index.html" aria-current="page">Accueil</a></li>
+          <li class="nav__item"><a class="nav__link" href="projets.html">Projets</a></li>
+          <li class="nav__item"><a class="nav__link" href="a-propos.html">À propos</a></li>
+          <li class="nav__item"><a class="button button--primary button--on-color button--small" href="contact.html">Me contacter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page__main" id="contenu">
+
+    <!-- PRÉSENTATION : qui je suis, ce que je fais, deux boutons -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="hero__hello">Bonjour, moi c'est Emilie&nbsp;!</p>
+          <h1 class="title title--xl">Designer <em class="title__accent">graphique</em> &amp; UX/UI</h1>
+          <p class="hero__lead">Je conçois des sites clairs et des visuels soignés, du premier croquis à la page en ligne.</p>
+          <p class="hero__status">BUT MMI à Limoges · En recherche d'un stage en webdesign · Freelance</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="projets.html">Voir mes projets <span aria-hidden="true">→</span></a>
+            <a class="button button--secondary" href="cv-emilie-borghesi.pdf" download><span aria-hidden="true">↓</span> Télécharger mon CV (PDF)</a>
+          </div>
+        </div>
+
+        <!-- Pour mettre une vraie photo : remplace images/sticker-1.jpg par ta photo -->
+        <figure class="hero__portrait">
+          <img class="hero__decor" src="images/nuage.svg" alt="" width="64" height="40">
+          <div class="hero__photo shape shape--arch shape--pink shape--tilt-left">
+            <img src="images/sticker-1.jpg" alt="Autoportrait d'Emilie en sticker&nbsp;: un visage au trait avec des lunettes roses" width="480" height="480">
+          </div>
+          <figcaption class="note">
+            <img class="note__arrow" src="images/fleche-haut.svg" alt="" width="48" height="40">
+            c'est moi&nbsp;!
+          </figcaption>
+        </figure>
+
+        <div class="hero__works">
+          <div class="hero__work shape shape--blob shape--green shape--tilt-right">
+            <img src="images/neko-cafe.jpg" alt="Aperçu de la maquette Neko café" width="1000" height="1320">
+          </div>
+          <div class="hero__row">
+            <div class="hero__detail shape shape--circle shape--orange shape--tilt-left">
+              <img src="images/sticker-5.jpg" alt="Sticker&nbsp;: logo Illustrator sur un motif de pinceaux et de palettes" width="480" height="480">
+            </div>
+            <img src="images/fleur.svg" alt="" width="40" height="40">
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="scallop scallop--down" aria-hidden="true"></div>
+
+    <!-- COMPÉTENCES -->
+    <section class="section" aria-labelledby="titre-competences">
+      <div class="container">
+        <h2 class="title title--l section__title" id="titre-competences">Ce que je <em class="title__accent">sais</em> faire</h2>
+        <div class="cards">
+          <article class="card card--pink">
+            <img class="card__icon" src="images/icone-graphisme.svg" alt="" width="24" height="24">
+            <h3 class="title title--m">Graphisme</h3>
+            <p class="card__text">Illustrations, stickers pour le web et retouche d'images. Des visuels nets, pensés pour être déclinés.</p>
+            <p class="card__tools">Illustrator · Photoshop</p>
+          </article>
+          <article class="card card--blue">
+            <img class="card__icon" src="images/icone-interface.svg" alt="" width="24" height="24">
+            <h3 class="title title--m">UX/UI design</h3>
+            <p class="card__text">Wireframes et maquettes de sites web. Des interfaces qu'on comprend dès le premier écran.</p>
+            <p class="card__tools">Figma</p>
+          </article>
+          <article class="card card--green">
+            <img class="card__icon" src="images/icone-code.svg" alt="" width="24" height="24">
+            <h3 class="title title--m">Intégration web</h3>
+            <p class="card__text">Sites responsives et accessibles, du front en HTML, CSS et JavaScript jusqu'au back en PHP relié à une base de données.</p>
+            <p class="card__tools">HTML · CSS · JavaScript · PHP · WordPress</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section class="section section--tight" aria-labelledby="titre-projets">
+      <div class="container">
+        <h2 class="title title--l section__title" id="titre-projets">Mes projets <em class="title__accent">préférés</em></h2>
+        <div class="cards">
+          <article class="project-card">
+            <div class="project-card__visual shape shape--arch shape--blue">
+              <img src="images/neko-cafe.jpg" alt="Maquette de la page d'accueil du Neko café&nbsp;: en-tête, titre Concept et photo du salon de thé" width="1000" height="1320" loading="lazy">
+            </div>
+            <span class="tag tag--blue">UX/UI</span>
+            <h3 class="title title--s"><a class="project-card__link" href="projets.html#neko-cafe">Neko café</a></h3>
+            <p class="project-card__text">Maquette de landing page pour un coffee shop fictif d'inspiration japonaise&nbsp;: concept, carte et plan d'accès, dans un univers tout en nuages.</p>
+          </article>
+          <article class="project-card">
+            <div class="project-card__visual shape shape--blob shape--pink shape--grid">
+              <img src="images/sticker-1.jpg" alt="Sticker&nbsp;: mon autoportrait au trait, avec des lunettes roses" width="480" height="480" loading="lazy">
+              <img src="images/sticker-5.jpg" alt="Sticker&nbsp;: logo Illustrator sur un motif de pinceaux et de palettes" width="480" height="480" loading="lazy">
+              <img src="images/sticker-2.jpg" alt="Sticker&nbsp;: mon pseudo en lettrage noir et vert" width="480" height="480" loading="lazy">
+              <img src="images/sticker-6.jpg" alt="Sticker&nbsp;: logo Premiere Pro sur un motif de caméras et de claps" width="480" height="480" loading="lazy">
+            </div>
+            <span class="tag tag--pink">Graphisme</span>
+            <h3 class="title title--s"><a class="project-card__link" href="projets.html#stickers">Stickers</a></h3>
+            <p class="project-card__text">Six stickers dessinés sur Illustrator pour illustrer mes compétences techniques et humaines, pensés pour l'écran comme pour l'impression.</p>
+          </article>
+          <article class="project-card">
+            <div class="project-card__visual shape shape--leaf shape--green">
+              <img src="images/hub-sae203.jpg" alt="Capture de la page d'accueil du projet&nbsp;: titre Bienvenue sur mon hub et boutons vers l'application et l'administration" width="800" height="1130" loading="lazy">
+            </div>
+            <span class="tag tag--green">Web</span>
+            <h3 class="title title--s"><a class="project-card__link" href="projets.html#catalogue-films">Catalogue de films</a></h3>
+            <p class="project-card__text">Site relié à une base de données, façon plateforme de streaming&nbsp;: profils, catégories et favoris. Front en JavaScript, back en PHP.</p>
+          </article>
+        </div>
+        <p class="section__action">
+          <a class="button button--secondary" href="projets.html">Tous les projets <span aria-hidden="true">→</span></a>
+        </p>
+      </div>
+    </section>
+
+    <!-- APPEL À ME CONTACTER -->
+    <section class="section section--tight" aria-labelledby="titre-contact">
+      <div class="container">
+        <div class="cta">
+          <div class="cta__body">
+            <h2 class="title title--l" id="titre-contact">Un stage, un projet&nbsp;? <em class="title__accent title__accent--ink">Parlons-en.</em></h2>
+            <p class="cta__text">Offre de stage, mission freelance ou simple question&nbsp;: écrivez-moi, je réponds à chaque message.</p>
+            <a class="button button--primary button--on-color" href="contact.html">Me contacter</a>
+          </div>
+          <ul class="cta__words" aria-hidden="true">
+            <li class="cta__word sticker sticker--pink">stage</li>
+            <li class="cta__word sticker sticker--green">freelance</li>
+            <li class="cta__word sticker sticker--violet">un café&nbsp;?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIED DE PAGE (identique sur toutes les pages) -->
+  <div class="scallop scallop--up" aria-hidden="true"></div>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__columns">
+        <div class="footer__about">
+          <p class="footer__name">
+            <span class="footer__first">Emilie</span>
+            <span class="footer__last">Borghesi</span>
+            <img class="footer__flower" src="images/fleur-blanche.svg" alt="" width="40" height="40">
+          </p>
+          <p class="footer__pitch">Designer graphique &amp; UX/UI à Limoges. Disponible pour un stage en webdesign et des missions freelance.</p>
+          <a class="footer__email" href="mailto:emilie.borghesi@outlook.fr">emilie.borghesi@outlook.fr</a>
+        </div>
+
+        <nav class="footer__nav" aria-label="Plan du site">
+          <h2 class="footer__heading">Le site</h2>
+          <ul class="footer__links">
+            <li><a class="footer__link" href="index.html">Accueil</a></li>
+            <li><a class="footer__link" href="projets.html">Projets</a></li>
+            <li><a class="footer__link" href="a-propos.html">À propos</a></li>
+            <li><a class="footer__link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__social">
+          <h2 class="footer__heading">Me retrouver ailleurs</h2>
+          <ul class="stickers">
+            <li class="stickers__item"><a class="sticker sticker--pink" href="https://www.linkedin.com/in/emilie-borghesi">LinkedIn</a></li>
+            <li class="stickers__item"><a class="sticker sticker--yellow" href="https://www.behance.net/emilieborghesi2">Behance</a></li>
+            <li class="stickers__item"><a class="sticker sticker--violet" href="https://github.com/EmilieBorghesi">GitHub</a></li>
+            <li class="stickers__item"><a class="sticker sticker--green" href="https://www.instagram.com/emilieenmmi/">Instagram</a></li>
+            <li class="stickers__item"><a class="sticker sticker--orange" href="cv-emilie-borghesi.pdf" download>Mon CV (PDF)</a></li>
+          </ul>
+          <p class="note">
+            <img class="footer__cloud" src="images/nuage.svg" alt="" width="64" height="40">
+            à très vite&nbsp;!
+          </p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__legal">© 2026 Emilie Borghesi · <a href="mentions-legales.html">Mentions légales</a></p>
+        <a class="footer__top" href="#haut">Retour en haut <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

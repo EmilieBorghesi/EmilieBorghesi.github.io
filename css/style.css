@@ -1,0 +1,1365 @@
+/* ==========================================================================
+   Portfolio d'Emilie Borghesi — feuille de style
+
+   Méthode BEM : .bloc, .bloc__element, .bloc--variante
+   Mobile d'abord : les styles de base sont ceux du téléphone ;
+   les @media (min-width) adaptent ensuite aux écrans plus larges.
+
+   Sommaire
+   1. Variables            7. Formes d'images, étiquettes, autocollants
+   2. Base                 8. Cartes et sections de l'accueil
+   3. En-tête et menu      9. Page Projets
+   4. Boutons             10. Page À propos
+   5. Titres et notes     11. Page Contact
+   6. Bandeau de page     12. Pied de page
+   ========================================================================== */
+
+/* 1. Variables ------------------------------------------------------------ */
+
+:root {
+  /* Fonds pastel */
+  --cream: #fff8e7;
+  --blue: #bfdff5;
+  --pink: #ffc9dc;
+  --violet: #d9ccf7;
+  --green: #c5ebc3;
+  --yellow: #ffe9a3;
+  --orange: #ffd2b0;
+
+  /* Contours plus soutenus (jamais pour du texte) */
+  --blue-strong: #6fb4e8;
+  --pink-strong: #f58fb4;
+  --violet-strong: #a98beb;
+  --green-strong: #6cc187;
+  --yellow-strong: #f2c24b;
+  --orange-strong: #f5a56b;
+
+  /* Textes */
+  --ink: #2b2540;
+  --ink-soft: #5a5470;
+  --accent: #5b3fd0;
+  --white: #fff;
+
+  /* Polices */
+  --font-title: "Unbounded", sans-serif;
+  --font-accent: "Caveat", cursive;
+  --font-text: "Outfit", system-ui, sans-serif;
+
+  /* Couleur du bandeau de la page (changée par .page--xxx) */
+  --page-color: var(--blue);
+}
+
+/* 2. Base ----------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--ink);
+  text-underline-offset: 0.3em;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Contour bien visible pour la navigation au clavier */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page--blue { --page-color: var(--blue); }
+.page--violet { --page-color: var(--violet); }
+.page--pink { --page-color: var(--pink); }
+.page--green { --page-color: var(--green); }
+
+.page__main {
+  flex: 1;
+}
+
+/* Largeur maximale du contenu, centrée, avec une marge sur les côtés */
+.container {
+  width: min(100% - 2.5rem, 70rem);
+  margin-inline: auto;
+}
+
+/* Lien « Aller au contenu » : caché, il apparaît à la touche Tab */
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 10;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--white);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  color: var(--white);
+  transform: none;
+}
+
+/* Bord festonné entre une zone colorée et le fond crème */
+.scallop {
+  height: 28px;
+  background-repeat: repeat-x;
+  background-size: 56px 28px;
+}
+
+.scallop--down {
+  background-image: radial-gradient(circle at 28px 0, var(--page-color) 27.5px, transparent 28px);
+}
+
+.scallop--up {
+  background-image: radial-gradient(circle at 28px 28px, var(--blue) 27.5px, transparent 28px);
+}
+
+/* 3. En-tête et menu ------------------------------------------------------ */
+
+.header {
+  background: var(--page-color);
+}
+
+.header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding-block: 0.75rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 3rem;
+  text-decoration: none;
+}
+
+.logo__first {
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.logo__last {
+  color: var(--accent);
+  font-family: var(--font-accent);
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.nav {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav__toggle {
+  display: none;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  text-decoration: underline;
+}
+
+.nav__link[aria-current="page"] {
+  text-decoration: underline wavy;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.45em;
+}
+
+/* Sur téléphone, quand le JavaScript fonctionne, le menu se replie
+   derrière un bouton. Sans JavaScript, les liens restent visibles. */
+@media (max-width: 47.99em) {
+  .js .nav__toggle {
+    display: block;
+  }
+
+  .js .nav__list {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding-block: 0.5rem;
+  }
+
+  .js .nav--open .nav__list {
+    display: flex;
+  }
+}
+
+/* 4. Boutons -------------------------------------------------------------- */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3.25rem;
+  padding: 0 1.75rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.button--primary {
+  background: var(--ink);
+  box-shadow: 4px 4px 0 var(--pink-strong);
+  color: var(--white);
+}
+
+.button--secondary {
+  background: var(--white);
+  box-shadow: 4px 4px 0 var(--yellow-strong);
+  color: var(--ink);
+}
+
+/* Sur un fond de couleur, l'ombre du bouton devient blanche */
+.button--on-color {
+  box-shadow: 4px 4px 0 var(--white);
+}
+
+.button--small {
+  min-height: 3rem;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+}
+
+/* Au survol, le bouton « s'enfonce » comme un autocollant qu'on appuie */
+.button:hover {
+  transform: translate(3px, 3px);
+}
+
+.button--primary:hover {
+  box-shadow: 1px 1px 0 var(--pink-strong);
+  color: var(--white);
+}
+
+.button--secondary:hover {
+  box-shadow: 1px 1px 0 var(--yellow-strong);
+  color: var(--ink);
+}
+
+.button--on-color:hover {
+  box-shadow: 1px 1px 0 var(--white);
+}
+
+/* 5. Titres et notes ------------------------------------------------------ */
+
+.title {
+  margin: 0;
+  font-family: var(--font-title);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.title--xl { font-size: clamp(1.75rem, 3.7vw, 3rem); }
+.title--l { font-size: clamp(1.4rem, 2.9vw, 2.25rem); }
+.title--m { font-size: clamp(1.25rem, 2.2vw, 1.5rem); }
+.title--s { font-size: 1.125rem; }
+
+/* Le mot écrit « à la main » dans un titre */
+.title__accent {
+  margin-right: 0.12em;
+  color: var(--accent);
+  font-family: var(--font-accent);
+  font-size: 1.4em;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 0.8;
+}
+
+.title__accent--ink {
+  color: var(--ink);
+}
+
+/* Petite note penchée, façon écriture au stylo */
+.note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0;
+  font-family: var(--font-accent);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1;
+  transform: rotate(-4deg);
+}
+
+.note__arrow {
+  width: 2.1rem;
+}
+
+/* 6. Bandeau de page (zone colorée sous l'en-tête) ------------------------ */
+
+.hero {
+  padding-block: 1rem 3rem;
+  background: var(--page-color);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 2rem 1rem;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / -1;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.hero__hello {
+  margin: 0;
+  font-family: var(--font-accent);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hero__lead {
+  max-width: 30em;
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.hero__status {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 1.25rem;
+  background: var(--white);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.hero__status::before {
+  flex-shrink: 0;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-top: 0.4em;
+  border-radius: 50%;
+  background: #2e9e5b;
+  content: "";
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.hero__portrait,
+.hero__works {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.hero__photo {
+  width: min(100%, 12.5rem);
+  aspect-ratio: 10 / 13;
+}
+
+.hero__work {
+  width: min(100%, 11.5rem);
+  aspect-ratio: 1;
+}
+
+.hero__detail {
+  width: 7.5rem;
+  aspect-ratio: 1;
+}
+
+.hero__decor {
+  width: 4.5rem;
+}
+
+.hero__row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media (min-width: 60em) {
+  .hero {
+    padding-block: 1.5rem 4rem;
+  }
+
+  .hero__inner {
+    grid-template-columns: 14rem 1fr 14rem;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero__text {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .hero__portrait {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .hero__works {
+    grid-row: 1;
+    grid-column: 3;
+  }
+}
+
+/* Variante simple : un titre centré (pages Projets et Contact) */
+.hero--simple .hero__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem 2rem;
+}
+
+.hero--simple .hero__text {
+  flex: 0 1 40rem;
+}
+
+/* 7. Formes d'images, étiquettes, autocollants ---------------------------- */
+
+/* Une image dans une forme : arche, galet, feuille ou cercle */
+.shape {
+  overflow: hidden;
+  border: 4px solid var(--ink);
+  background: var(--white);
+}
+
+.shape img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Le portrait est centré dans sa forme */
+.hero__photo img,
+.about__photo img {
+  object-position: center;
+}
+
+.shape--arch { border-radius: 999px 999px 2rem 2rem; }
+.shape--blob { border-radius: 47% 53% 44% 56% / 55% 46% 54% 45%; }
+.shape--leaf { border-radius: 35% 2rem 35% 2rem; }
+.shape--circle { border-radius: 50%; }
+
+.shape--blue { border-color: var(--blue-strong); background: var(--blue); }
+.shape--pink { border-color: var(--pink-strong); background: var(--pink); }
+.shape--violet { border-color: var(--violet-strong); background: var(--violet); }
+.shape--green { border-color: var(--green-strong); background: var(--green); }
+.shape--yellow { border-color: var(--yellow-strong); background: var(--yellow); }
+.shape--orange { border-color: var(--orange-strong); background: var(--orange); }
+
+/* Quatre images dans la même forme */
+.shape--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.shape--tilt-left { transform: rotate(-3deg); }
+.shape--tilt-right { transform: rotate(4deg); }
+
+/* Étiquette de catégorie */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.85rem;
+  padding: 0 0.8rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  background: var(--white);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.tag--blue { background: var(--blue); }
+.tag--pink { background: var(--pink); }
+.tag--green { background: var(--green); }
+.tag--violet { background: var(--violet); }
+.tag--yellow { background: var(--yellow); }
+.tag--orange { background: var(--orange); }
+
+/* Autocollants : liens vers les réseaux, mots penchés */
+.stickers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+  padding: 0 0.25rem;
+  list-style: none;
+}
+
+.stickers__item:nth-child(odd) { transform: rotate(-4deg); }
+.stickers__item:nth-child(even) { transform: rotate(3deg); }
+
+.sticker {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3.25rem;
+  padding: 0 1.3rem;
+  border: 2px solid var(--ink);
+  border-radius: 1.6rem 1.9rem 1.5rem 2rem;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a.sticker:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.sticker--pink { background: var(--pink); }
+.sticker--yellow { background: var(--yellow); }
+.sticker--violet { background: var(--violet); }
+.sticker--green { background: var(--green); }
+.sticker--orange { background: var(--orange); }
+.sticker--blue { background: var(--blue); }
+
+/* 8. Cartes et sections de l'accueil -------------------------------------- */
+
+.section {
+  padding-block: 3.5rem;
+}
+
+.section--tight {
+  padding-top: 0;
+}
+
+.section__title {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.section__action {
+  margin: 3rem 0 0;
+  text-align: center;
+}
+
+/* Grille qui passe toute seule de 1 à 2, 3 ou 4 colonnes */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  align-items: start;
+  gap: 1.75rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.75rem;
+  border: 3px solid var(--ink);
+  border-radius: 2rem;
+}
+
+.card:nth-child(odd) { transform: rotate(-1.5deg); }
+.card:nth-child(even) { transform: rotate(1deg); }
+
+.card--pink { border-color: var(--pink-strong); background: var(--pink); }
+.card--blue { border-color: var(--blue-strong); background: var(--blue); }
+.card--green { border-color: var(--green-strong); background: var(--green); }
+.card--violet { border-color: var(--violet-strong); background: var(--violet); }
+.card--yellow { border-color: var(--yellow-strong); background: var(--yellow); }
+.card--orange { border-color: var(--orange-strong); background: var(--orange); }
+
+.card__icon {
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: 0.4rem;
+  padding: 0.85rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  background: var(--white);
+}
+
+.card__text {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.card__tools {
+  margin: 0.15rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+@media (min-width: 60em) {
+  /* Une carte sur deux est décalée vers le bas : moins « aligné au cordeau » */
+  .card:nth-child(even) {
+    margin-top: 1.75rem;
+  }
+}
+
+/* Carte de projet sur l'accueil */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.project-card__visual {
+  width: min(100%, 22rem);
+  aspect-ratio: 1;
+  margin-bottom: 0.9rem;
+}
+
+.project-card:nth-child(odd) .project-card__visual { transform: rotate(-2deg); }
+.project-card:nth-child(even) .project-card__visual { transform: rotate(2deg); }
+
+.project-card__link {
+  text-decoration: none;
+}
+
+.project-card__link:hover {
+  text-decoration: underline;
+}
+
+.project-card__text {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+@media (min-width: 60em) {
+  .project-card:nth-child(even) {
+    margin-top: 2rem;
+  }
+}
+
+/* Bandeau d'appel : « Parlons-en » */
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem 2.5rem;
+  padding: 2.5rem 1.5rem;
+  border: 3px solid var(--yellow-strong);
+  border-radius: 2.5rem;
+  background: var(--yellow);
+}
+
+.cta--orange { border-color: var(--orange-strong); background: var(--orange); }
+.cta--green { border-color: var(--green-strong); background: var(--green); }
+
+.cta__body {
+  display: flex;
+  flex: 1 1 22rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.cta--centered .cta__body {
+  flex: 0 1 34rem;
+  align-items: center;
+  text-align: center;
+}
+
+.cta__text {
+  max-width: 30em;
+  margin: 0;
+}
+
+.cta__words {
+  display: flex;
+  flex: 0 1 18rem;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  list-style: none;
+}
+
+.cta__word:nth-child(1) { align-self: flex-start; transform: rotate(-6deg); }
+.cta__word:nth-child(2) { align-self: flex-end; transform: rotate(5deg); }
+.cta__word:nth-child(3) { align-self: center; transform: rotate(-3deg); }
+
+@media (min-width: 48em) {
+  .cta {
+    padding: 3.5rem;
+  }
+}
+
+/* 9. Page Projets --------------------------------------------------------- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.filters__button {
+  min-height: 2.75rem;
+  padding: 0 1.25rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.filters__button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.projects {
+  display: grid;
+  gap: 4rem;
+}
+
+/* Un projet : un grand panneau, texte d'un côté, image de l'autre */
+.project {
+  --project-color: var(--blue);
+  --project-strong: var(--blue-strong);
+
+  display: grid;
+  overflow: hidden;
+  border: 3px solid var(--project-strong);
+  border-radius: 2.5rem;
+  background: var(--project-color);
+}
+
+/* Un projet masqué par les filtres */
+.project[hidden] {
+  display: none;
+}
+
+.project--pink { --project-color: var(--pink); --project-strong: var(--pink-strong); }
+.project--green { --project-color: var(--green); --project-strong: var(--green-strong); }
+
+.project__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 2rem 1.5rem;
+}
+
+.project__tag {
+  transform: rotate(-2deg);
+}
+
+.project__subtitle {
+  display: block;
+  color: var(--ink);
+}
+
+.project__meta {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.project__details {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0.4rem 0 0;
+}
+
+.project__label {
+  font-family: var(--font-title);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.project__value {
+  margin: 0.15rem 0 0;
+  font-size: 1rem;
+}
+
+.project__media {
+  position: relative;
+  min-height: 20rem;
+  background: var(--white);
+}
+
+.project__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* La capture du hub a un fond uni : on le prolonge derrière l'image */
+.project__media--hub {
+  background: #bccad0;
+}
+
+.project__media--stickers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.project__stickers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project__sticker {
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: 1.1rem;
+}
+
+.project__sticker:nth-child(odd) { transform: rotate(-2.5deg); }
+.project__sticker:nth-child(even) { transform: rotate(2deg); }
+
+.project__note {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  font-family: var(--font-accent);
+  font-size: 1.4rem;
+  transform: rotate(8deg);
+}
+
+@media (min-width: 56em) {
+  .project {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project__body {
+    padding: 2.75rem;
+  }
+
+  /* Le panneau inversé : l'image passe à gauche */
+  .project--reverse .project__media {
+    order: -1;
+  }
+
+  /* Bord festonné vertical entre le texte et l'image */
+  .project__media::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 20px;
+    background-image: radial-gradient(circle at 0 20px, var(--project-color) 19.5px, transparent 20px);
+    background-repeat: repeat-y;
+    background-size: 20px 40px;
+    content: "";
+  }
+
+  .project--reverse .project__media::before {
+    right: 0;
+    left: auto;
+    background-image: radial-gradient(circle at 20px 20px, var(--project-color) 19.5px, transparent 20px);
+  }
+
+  .project__media--hub .project__image {
+    left: 20px;
+    width: calc(100% - 20px);
+  }
+
+  .project__media--stickers {
+    padding: 2.5rem 3.25rem 2.5rem 2rem;
+  }
+}
+
+/* 10. Page À propos ------------------------------------------------------- */
+
+.about {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  gap: 2.5rem;
+}
+
+.about__portrait {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+}
+
+.about__photo {
+  width: min(100%, 17rem);
+  aspect-ratio: 4 / 5;
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.about__paragraph {
+  max-width: 36em;
+  margin: 0;
+}
+
+.about__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 56em) {
+  .about {
+    grid-template-columns: 20rem 1fr;
+    gap: 4rem;
+  }
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 2.5rem 1.5rem;
+}
+
+.tools__title {
+  margin-bottom: 1rem;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pills__item {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.4rem;
+  padding: 0 1rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.pills__item:nth-child(odd) { transform: rotate(-2deg); }
+.pills__item:nth-child(even) { transform: rotate(1.5deg); }
+
+.pills--pink .pills__item { background: var(--pink); }
+.pills--green .pills__item { background: var(--green); }
+.pills--blue .pills__item { background: var(--blue); }
+.pills--yellow .pills__item { background: var(--yellow); }
+
+.timeline {
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px dashed #c9bfa3;
+  list-style: none;
+}
+
+.timeline__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 2rem;
+  padding-block: 1.25rem;
+  border-top: 2px dashed #c9bfa3;
+}
+
+.timeline__date {
+  flex: 0 0 10.5rem;
+}
+
+.timeline__text {
+  flex: 1 1 20rem;
+  margin: 0;
+}
+
+/* 11. Page Contact -------------------------------------------------------- */
+
+.contact {
+  display: grid;
+  align-items: start;
+  gap: 3rem;
+}
+
+.contact__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.contact__card {
+  padding: 1.5rem 1.75rem;
+  border: 2px solid var(--ink);
+  border-radius: 1.75rem;
+  background: var(--yellow);
+  box-shadow: 5px 5px 0 var(--yellow-strong);
+  transform: rotate(-1.5deg);
+}
+
+.contact__heading {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-title);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.contact__card .contact__heading {
+  margin-bottom: 0;
+}
+
+.contact__email {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+  font-size: clamp(1.05rem, 4.2vw, 1.35rem);
+  font-weight: 500;
+}
+
+.contact__cv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+@media (min-width: 56em) {
+  .contact {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2rem 1.5rem;
+  border: 2px solid var(--ink);
+  border-radius: 2.25rem;
+  background: var(--white);
+  box-shadow: 8px 8px 0 var(--violet);
+}
+
+.form__hint {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form__label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.form__input {
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 1rem;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+.form__input--textarea {
+  min-height: 10.5rem;
+  resize: vertical;
+}
+
+.form__submit {
+  align-self: flex-start;
+}
+
+@media (min-width: 48em) {
+  .form {
+    padding: 2.5rem;
+  }
+}
+
+/* 12. Pied de page -------------------------------------------------------- */
+
+.footer {
+  background: var(--blue);
+}
+
+.footer__inner {
+  display: grid;
+  gap: 2rem;
+  padding-block: 2.5rem 1.25rem;
+}
+
+.footer__columns {
+  display: grid;
+  gap: 2rem 3.5rem;
+}
+
+.footer__about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.footer__name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.footer__first {
+  font-family: var(--font-title);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.footer__last {
+  color: var(--accent);
+  font-family: var(--font-accent);
+  font-size: clamp(2.5rem, 5vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.footer__flower {
+  width: 2.25rem;
+}
+
+.footer__pitch {
+  max-width: 24em;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.footer__email {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.footer__heading {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-title);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.footer__social .footer__heading {
+  margin-bottom: 0;
+}
+
+.footer__cloud {
+  width: 4rem;
+}
+
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+  padding-top: 0.75rem;
+  border-top: 2px dashed var(--blue-strong);
+  font-size: 0.95rem;
+}
+
+.footer__legal {
+  margin: 0;
+}
+
+.footer__top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  font-weight: 500;
+}
+
+@media (min-width: 56em) {
+  .footer__columns {
+    grid-template-columns: 1fr auto 25rem;
+  }
+
+  .footer__links {
+    flex-direction: column;
+  }
+}
+
+/* Page « Mentions légales » : du texte simple */
+.legal {
+  max-width: 44rem;
+}
+
+.legal__title {
+  margin: 2rem 0 0.5rem;
+}
+
+/* Respecte le réglage « réduire les animations » du système */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .button {
+    transition: none;
+  }
+}
