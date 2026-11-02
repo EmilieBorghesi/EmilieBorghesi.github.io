@@ -595,11 +595,16 @@ textarea:focus-visible {
 .shape--green { border-color: var(--green-strong); background: var(--green); }
 .shape--yellow { border-color: var(--yellow-strong); background: var(--yellow); }
 .shape--orange { border-color: var(--orange-strong); background: var(--orange); }
+.shape--red { border-color: var(--red-strong); background: var(--red); }
 
 .shape--grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+}
+
+.shape--focus-low img {
+  object-position: center 20%;
 }
 
 .shape--tilt-left { transform: rotate(-3deg); }
@@ -886,7 +891,7 @@ a.sticker:hover {
 
 .project--pink { --project-color: var(--pink); --project-strong: var(--pink-strong); }
 .project--green { --project-color: var(--green); --project-strong: var(--green-strong); }
-.project--violet { --project-color: var(--violet); --project-strong: var(--violet-strong); }
+.project--red { --project-color: var(--red); --project-strong: var(--red-strong); }
 .project--yellow { --project-color: var(--yellow); --project-strong: var(--yellow-strong); }
 
 .project__body {
