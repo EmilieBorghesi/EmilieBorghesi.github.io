@@ -12,9 +12,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Outfit:wght@400;500;600&amp;family=Unbounded:wght@600&amp;display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=3">
-  <script src="js/theme.js?v=3"></script>
-  <script src="js/script.js?v=3" defer></script>
+  <link rel="stylesheet" href="css/style.css?v=9">
+  <script src="js/theme.js?v=9"></script>
+  <script src="js/script.js?v=9" defer></script>
 </head>
 <body class="page page--blue">
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -66,7 +66,7 @@
         <figure class="hero__portrait">
           <img class="hero__decor" src="images/nuage.svg" alt="" width="64" height="40">
           <div class="hero__photo shape shape--arch shape--pink shape--tilt-left">
-            <img src="images/sticker-1.jpg?v=2" alt="Autoportrait d'Emilie en sticker&nbsp;: un visage au trait avec des lunettes roses" width="464" height="464">
+            <img src="images/sticker-1.avif" alt="Autoportrait d'Emilie en sticker&nbsp;: un visage au trait avec des lunettes roses" width="464" height="464">
           </div>
           <figcaption class="note">
             <img class="note__arrow" src="images/fleche-haut.svg" alt="" width="48" height="40">
@@ -76,11 +76,11 @@
 
         <div class="hero__works">
           <div class="hero__work shape shape--blob shape--green shape--tilt-right">
-            <img src="images/neko-cafe.jpg" alt="Aperçu de la maquette Neko café" width="1000" height="1320">
+            <img src="images/neko-cafe.avif" alt="Aperçu de la maquette Neko café" width="1000" height="1320">
           </div>
           <div class="hero__row">
             <div class="hero__detail shape shape--circle shape--orange shape--tilt-left">
-              <img src="images/sticker-5.jpg" alt="Sticker&nbsp;: logo Illustrator sur un motif de pinceaux et de palettes" width="480" height="480">
+              <img src="images/sticker-5.avif" alt="Sticker&nbsp;: logo Illustrator sur un motif de pinceaux et de palettes" width="480" height="480">
             </div>
             <img src="images/fleur.svg" alt="" width="40" height="40">
           </div>
@@ -120,31 +120,47 @@
         <h2 class="title title--l section__title" id="titre-projets">Mes projets <em class="title__accent">préférés</em></h2>
         <div class="cards">
           <article class="project-card">
+            <div class="project-card__visual shape shape--arch shape--violet">
+              <img src="images/galerie/metanav-connexion.avif" alt="Écran de connexion MetaNav&nbsp;: silhouette de Queen sur fond d'étoiles rouges, champ nom de code et bouton d'entrée" width="375" height="812" loading="lazy">
+            </div>
+            <span class="tag tag--violet">UX/UI</span>
+            <h3 class="title title--s"><a class="project-card__link" href="projet-metanav.html">MetaNav</a></h3>
+            <p class="project-card__text">Application mobile imaginée pour Queen, la stratège des Voleurs Fantômes de <span lang="en">Persona 5 Royal</span>&nbsp;: recherche de Palais, carte, alertes et messagerie d'équipe.</p>
+          </article>
+          <article class="project-card">
+            <div class="project-card__visual shape shape--blob shape--yellow">
+              <img src="images/galerie/coolkids-accueil.avif" alt="Page d'accueil Emilie and the Cool Kids&nbsp;: vidéo, flèche néon, nouveautés, produit star et carte" width="1600" height="4141" loading="lazy">
+            </div>
+            <span class="tag tag--yellow">Web</span>
+            <h3 class="title title--s"><a class="project-card__link" href="projet-cool-kids.html">Emilie and the Cool Kids</a></h3>
+            <p class="project-card__text">Site click &amp; collect sous WordPress pour Emilie and the Cool Kids&nbsp;: carte, fiches produits, panier, commande et suivi du retrait en boutique.</p>
+          </article>
+          <article class="project-card">
             <div class="project-card__visual shape shape--arch shape--blue">
-              <img src="images/neko-cafe.jpg" alt="Maquette de la page d'accueil du Neko café&nbsp;: en-tête, titre Concept et photo du salon de thé" width="1000" height="1320" loading="lazy">
+              <img src="images/neko-cafe.avif" alt="Maquette de la page d'accueil du Neko café&nbsp;: en-tête, titre Concept et photo du salon de thé" width="1000" height="1320" loading="lazy">
             </div>
             <span class="tag tag--blue">UX/UI</span>
-            <h3 class="title title--s"><a class="project-card__link" href="projets.html#neko-cafe">Neko café</a></h3>
+            <h3 class="title title--s"><a class="project-card__link" href="projet-neko-cafe.html">Neko café</a></h3>
             <p class="project-card__text">Maquette de landing page pour un coffee shop fictif d'inspiration japonaise&nbsp;: concept, carte et plan d'accès, dans un univers tout en nuages.</p>
           </article>
           <article class="project-card">
-            <div class="project-card__visual shape shape--blob shape--pink shape--grid">
-              <img src="images/sticker-1.jpg?v=2" alt="Sticker&nbsp;: mon autoportrait au trait, avec des lunettes roses" width="464" height="464" loading="lazy">
-              <img src="images/sticker-5.jpg" alt="Sticker&nbsp;: logo Illustrator sur un motif de pinceaux et de palettes" width="480" height="480" loading="lazy">
-              <img src="images/sticker-2.jpg" alt="Sticker&nbsp;: mon pseudo en lettrage noir et vert" width="480" height="480" loading="lazy">
-              <img src="images/sticker-6.jpg" alt="Sticker&nbsp;: logo Premiere Pro sur un motif de caméras et de claps" width="480" height="480" loading="lazy">
-            </div>
-            <span class="tag tag--pink">Graphisme</span>
-            <h3 class="title title--s"><a class="project-card__link" href="projets.html#stickers">Stickers</a></h3>
-            <p class="project-card__text">Six stickers dessinés sur Illustrator pour illustrer mes compétences techniques et humaines, pensés pour l'écran comme pour l'impression.</p>
-          </article>
-          <article class="project-card">
             <div class="project-card__visual shape shape--leaf shape--green">
-              <img src="images/hub-sae203.jpg" alt="Capture de la page d'accueil du projet&nbsp;: titre Bienvenue sur mon hub et boutons vers l'application et l'administration" width="800" height="1130" loading="lazy">
+              <img src="images/hub-sae203.avif" alt="Capture de la page d'accueil du projet&nbsp;: titre Bienvenue sur mon hub et boutons vers l'application et l'administration" width="800" height="1130" loading="lazy">
             </div>
             <span class="tag tag--green">Web</span>
-            <h3 class="title title--s"><a class="project-card__link" href="projets.html#catalogue-films">Catalogue de films</a></h3>
+            <h3 class="title title--s"><a class="project-card__link" href="projet-catalogue-films.html">Catalogue de films</a></h3>
             <p class="project-card__text">Site relié à une base de données, façon plateforme de streaming&nbsp;: profils, catégories et favoris. Front en JavaScript, back en PHP.</p>
+          </article>
+          <article class="project-card">
+            <div class="project-card__visual shape shape--blob shape--pink shape--grid">
+              <img src="images/sticker-1.avif" alt="Sticker&nbsp;: mon autoportrait au trait, avec des lunettes roses" width="464" height="464" loading="lazy">
+              <img src="images/sticker-5.avif" alt="Sticker&nbsp;: logo Illustrator sur un motif de pinceaux et de palettes" width="480" height="480" loading="lazy">
+              <img src="images/sticker-2.avif" alt="Sticker&nbsp;: mon pseudo en lettrage noir et vert" width="480" height="480" loading="lazy">
+              <img src="images/sticker-6.avif" alt="Sticker&nbsp;: logo Premiere Pro sur un motif de caméras et de claps" width="480" height="480" loading="lazy">
+            </div>
+            <span class="tag tag--pink">Graphisme</span>
+            <h3 class="title title--s"><a class="project-card__link" href="projet-stickers.html">Stickers</a></h3>
+            <p class="project-card__text">Six stickers dessinés sur Illustrator pour illustrer mes compétences techniques et humaines, pensés pour l'écran comme pour l'impression.</p>
           </article>
         </div>
         <p class="section__action">
@@ -199,7 +215,7 @@
           <h2 class="footer__heading">Me retrouver ailleurs</h2>
           <ul class="stickers">
             <li class="stickers__item"><a class="sticker sticker--pink" href="https://www.linkedin.com/in/emilie-borghesi">LinkedIn</a></li>
-            <li class="stickers__item"><a class="sticker sticker--yellow" href="https://www.behance.net/emilieborghesi2">Behance</a></li>
+            <li class="stickers__item"><a class="sticker sticker--yellow" href="https://www.behance.net/emilieborghesi2">Behance (inactif)</a></li>
             <li class="stickers__item"><a class="sticker sticker--violet" href="https://github.com/EmilieBorghesi">GitHub</a></li>
             <li class="stickers__item"><a class="sticker sticker--green" href="https://www.instagram.com/emilieenmmi/">Instagram</a></li>
             <li class="stickers__item"><a class="sticker sticker--orange" href="cv-emilie-borghesi.pdf" download>Mon CV (PDF)</a></li>
@@ -213,6 +229,7 @@
 
       <div class="footer__bottom">
         <p class="footer__legal">© 2026 Emilie Borghesi · <a href="mentions-legales.html">Mentions légales</a></p>
+        <p class="footer__updated">Date de la dernière modification&nbsp;: <time class="footer__date" datetime="2026-11-02">2 novembre 2026</time></p>
         <a class="footer__top" href="#haut">Retour en haut <span aria-hidden="true">↑</span></a>
       </div>
     </div>

@@ -7,6 +7,7 @@ const texts = {
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
     mailSubject: "Message de ",
+    locale: "fr-FR",
   },
   en: {
     toDark: "Switch to night theme",
@@ -14,10 +15,13 @@ const texts = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     mailSubject: "Message from ",
+    locale: "en-GB",
   },
 };
 
 const text = texts[root.lang] || texts.fr;
+
+const dateOptions = { day: "numeric", month: "long", year: "numeric" };
 
 const themeToggle = document.querySelector(".theme-toggle");
 
@@ -80,4 +84,12 @@ if (form) {
     window.location.href =
       form.action + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
   });
+}
+
+const updatedDate = document.querySelector(".footer__date");
+
+if (updatedDate) {
+  const modified = new Date(document.lastModified);
+  updatedDate.dateTime = modified.toISOString().slice(0, 10);
+  updatedDate.textContent = modified.toLocaleDateString(text.locale, dateOptions);
 }

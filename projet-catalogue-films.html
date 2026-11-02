@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catalogue de films — Emilie Borghesi</title>
+  <meta name="description" content="Site relié à une base de données, façon plateforme de streaming : profils, catégories et favoris. Front en JavaScript, back en PHP.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="en" href="en/project-film-catalogue.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Outfit:wght@400;500;600&amp;family=Unbounded:wght@600&amp;display=swap">
+
+  <link rel="stylesheet" href="css/style.css?v=9">
+  <script src="js/theme.js?v=9"></script>
+  <script src="js/script.js?v=9" defer></script>
+</head>
+<body class="page page--violet">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="header" id="haut">
+    <div class="container header__inner">
+      <a class="logo" href="index.html" aria-label="Emilie Borghesi, retour à l'accueil">
+        <span class="logo__first">Emilie</span>
+        <span class="logo__last">Borghesi</span>
+      </a>
+      <div class="header__tools">
+        <a class="round-button lang-switch" href="en/project-film-catalogue.html" hreflang="en" lang="en" aria-label="Switch to English">
+          <img class="lang-switch__flag" src="images/drapeau-anglais.svg" alt="" width="60" height="30">
+        </a>
+        <button class="round-button theme-toggle" type="button" aria-label="Passer au thème nuit">
+          <svg class="theme-toggle__moon" width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-toggle__sun" width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="round-button nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+      <nav class="nav" id="menu" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="index.html">Accueil</a></li>
+          <li class="nav__item"><a class="nav__link" href="projets.html" aria-current="page">Projets</a></li>
+          <li class="nav__item"><a class="nav__link" href="a-propos.html">À propos</a></li>
+          <li class="nav__item"><a class="button button--primary button--on-color button--small" href="contact.html">Me contacter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page__main" id="contenu">
+
+    <section class="hero hero--simple">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <a class="back-link" href="projets.html"><span aria-hidden="true">←</span> Tous les projets</a>
+          <div class="hero__tags">
+            <span class="tag tag--green">Web</span>
+            <span class="tag"><time datetime="2026-05">Mai 2026</time></span>
+          </div>
+          <h1 class="title title--xl">Catalogue de films <em class="title__accent title__accent--block">site relié à une base de données</em></h1>
+          <p class="hero__lead">Site relié à une base de données, façon plateforme de streaming&nbsp;: profils, catégories et favoris. Front en JavaScript, back en PHP.</p>
+        </div>
+      </div>
+    </section>
+    <div class="scallop scallop--down" aria-hidden="true"></div>
+
+    <section class="section" aria-labelledby="titre-resume">
+      <div class="container">
+        <h2 class="title title--l section__title" id="titre-resume">Le projet en <em class="title__accent">bref</em></h2>
+        <div class="summary summary--green">
+          <p class="summary__meta">Rôle&nbsp;: développement front et back · Outils&nbsp;: HTML, CSS, JavaScript, PHP · Projet universitaire (SAé 2.03) · 3 semaines</p>
+          <dl class="summary__details">
+            <div>
+              <dt class="summary__label">Sujet</dt>
+              <dd class="summary__value">La question posée&nbsp;: comment consulter de manière fluide des contenus stockés dans une base de données, et permettre aux utilisateurs d'interagir avec eux&nbsp;? Il fallait un site lisible et ergonomique, où l'on navigue facilement dans un catalogue.</dd>
+            </div>
+            <div>
+              <dt class="summary__label">Démarche</dt>
+              <dd class="summary__value">En trois semaines, j'ai construit un catalogue de films façon plateforme de streaming&nbsp;: des profils, des films rangés par catégorie, une fiche détaillée et des favoris, plus un espace d'administration protégé pour ajouter de nouveaux films à la base de données. Front en HTML, CSS (BEM) et JavaScript, back en PHP relié à la base de données, puis mise en ligne sur mon propre hébergement.</dd>
+            </div>
+            <div>
+              <dt class="summary__label">Résultat</dt>
+              <dd class="summary__value">Un site en ligne et fonctionnel&nbsp;: chaque profil retrouve ses favoris et ne voit que les films adaptés à son âge, le tout chargé depuis la base de données sans changer de page.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="titre-visuels">
+      <div class="container">
+        <h2 class="title title--l section__title" id="titre-visuels">Les <em class="title__accent">visuels</em></h2>
+        <div class="gallery gallery--single">
+          <figure class="gallery__item">
+            <a class="gallery__link" href="images/hub-sae203.avif">
+              <img class="gallery__image" src="images/hub-sae203.avif" alt="Capture de la page d'accueil du projet&nbsp;: titre Bienvenue sur mon hub et boutons vers l'application et l'administration" width="800" height="1130">
+            </a>
+            <figcaption class="gallery__caption">La page d'accueil du projet, qui mène à l'application et à l'espace d'administration.</figcaption>
+          </figure>
+        </div>
+        <p class="section__action">
+          <a class="button button--primary" href="https://borghesi-sae203.mmi-limoges.fr">Voir le site en ligne <span aria-hidden="true">→</span></a>
+        </p>
+      </div>
+    </section>
+
+    <nav class="section section--tight" aria-label="Autres projets">
+      <div class="container pager">
+        <a class="button button--secondary pager__link" href="projet-neko-cafe.html"><span aria-hidden="true">←</span> Projet précédent&nbsp;: Neko café</a>
+        <a class="button button--secondary pager__link pager__link--next" href="projet-stickers.html">Projet suivant&nbsp;: Stickers <span aria-hidden="true">→</span></a>
+      </div>
+    </nav>
+
+    <section class="section section--tight" aria-labelledby="titre-contact">
+      <div class="container">
+        <div class="cta cta--orange cta--centered">
+          <div class="cta__body">
+            <h2 class="title title--l" id="titre-contact">Un projet du même genre&nbsp;? <em class="title__accent title__accent--ink">Parlons-en.</em></h2>
+            <p class="cta__text">Dites-moi ce dont vous avez besoin&nbsp;: je vous réponds avec des idées et un planning.</p>
+            <a class="button button--primary button--on-color" href="contact.html">Me contacter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="scallop scallop--up" aria-hidden="true"></div>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__columns">
+        <div class="footer__about">
+          <p class="footer__name">
+            <span class="footer__first">Emilie</span>
+            <span class="footer__last">Borghesi</span>
+            <img class="footer__flower" src="images/fleur-blanche.svg" alt="" width="40" height="40">
+          </p>
+          <p class="footer__pitch">Designer graphique &amp; UX/UI à Limoges. Disponible pour un stage en webdesign et des missions freelance.</p>
+          <a class="footer__email" href="mailto:emilie.borghesi@outlook.fr">emilie.borghesi@outlook.fr</a>
+        </div>
+
+        <nav class="footer__nav" aria-label="Plan du site">
+          <h2 class="footer__heading">Le site</h2>
+          <ul class="footer__links">
+            <li><a class="footer__link" href="index.html">Accueil</a></li>
+            <li><a class="footer__link" href="projets.html">Projets</a></li>
+            <li><a class="footer__link" href="a-propos.html">À propos</a></li>
+            <li><a class="footer__link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__social">
+          <h2 class="footer__heading">Me retrouver ailleurs</h2>
+          <ul class="stickers">
+            <li class="stickers__item"><a class="sticker sticker--pink" href="https://www.linkedin.com/in/emilie-borghesi">LinkedIn</a></li>
+            <li class="stickers__item"><a class="sticker sticker--yellow" href="https://www.behance.net/emilieborghesi2">Behance (inactif)</a></li>
+            <li class="stickers__item"><a class="sticker sticker--violet" href="https://github.com/EmilieBorghesi">GitHub</a></li>
+            <li class="stickers__item"><a class="sticker sticker--green" href="https://www.instagram.com/emilieenmmi/">Instagram</a></li>
+            <li class="stickers__item"><a class="sticker sticker--orange" href="cv-emilie-borghesi.pdf" download>Mon CV (PDF)</a></li>
+          </ul>
+          <p class="note">
+            <img class="footer__cloud" src="images/nuage.svg" alt="" width="64" height="40">
+            à très vite&nbsp;!
+          </p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__legal">© 2026 Emilie Borghesi · <a href="mentions-legales.html">Mentions légales</a></p>
+        <p class="footer__updated">Date de la dernière modification&nbsp;: <time class="footer__date" datetime="2026-11-02">2 novembre 2026</time></p>
+        <a class="footer__top" href="#haut">Retour en haut <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
