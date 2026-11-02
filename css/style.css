@@ -21,8 +21,9 @@
   --accent: #5b3fd0;
   --white: #fff;
 
-    --font-title: "Unbounded", sans-serif;
-  --font-accent: "Caveat", cursive;
+    --font-title: "Tinos", serif;
+  --font-accent: "Englebert", sans-serif;
+  --font-base: "Unbounded", sans-serif;
   --font-text: "Outfit", system-ui, sans-serif;
 
   --line: #c9bfa3;
@@ -230,7 +231,7 @@ textarea:focus-visible {
 }
 
 .logo__first {
-  font-family: var(--font-title);
+  font-family: var(--font-base);
   font-size: 1.05rem;
   font-weight: 600;
 }
@@ -238,8 +239,8 @@ textarea:focus-visible {
 .logo__last {
   color: var(--accent);
   font-family: var(--font-accent);
-  font-size: 1.9rem;
-  font-weight: 600;
+  font-size: 1.42rem;
+  font-weight: 700;
   line-height: 1;
 }
 
@@ -370,9 +371,14 @@ textarea:focus-visible {
 .title {
   margin: 0;
   font-family: var(--font-title);
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.25;
+}
+
+.title--base {
+  font-family: var(--font-base);
+  font-weight: 600;
 }
 
 .title--xl { font-size: clamp(1.75rem, 3.7vw, 3rem); }
@@ -384,7 +390,7 @@ textarea:focus-visible {
   margin-right: 0.12em;
   color: var(--accent);
   font-family: var(--font-accent);
-  font-size: 1.4em;
+  font-size: 1.05em;
   font-style: normal;
   font-weight: 700;
   letter-spacing: 0;
@@ -407,8 +413,8 @@ textarea:focus-visible {
   gap: 0.4rem;
   margin: 0;
   font-family: var(--font-accent);
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
   line-height: 1;
   transform: rotate(-4deg);
 }
@@ -448,8 +454,8 @@ textarea:focus-visible {
 .hero__hello {
   margin: 0;
   font-family: var(--font-accent);
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 1.35rem;
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -722,6 +728,10 @@ a.sticker:hover {
   background: var(--white);
 }
 
+.card__title {
+  opacity: 0.9;
+}
+
 [data-theme="dark"] .card__icon {
   background: var(--ink);
 }
@@ -826,8 +836,9 @@ a.sticker:hover {
   gap: 0.9rem;
   margin: 0;
   padding: 0;
-  font-family: var(--font-title);
+  font-family: var(--font-base);
   font-size: 0.95rem;
+  font-weight: 600;
   list-style: none;
 }
 
@@ -915,6 +926,7 @@ a.sticker:hover {
 .project__subtitle {
   display: block;
   color: var(--ink);
+  line-height: 1.05;
 }
 
 .project__meta {
@@ -931,7 +943,7 @@ a.sticker:hover {
 }
 
 .project__label {
-  font-family: var(--font-title);
+  font-family: var(--font-base);
   font-size: 0.8125rem;
   font-weight: 600;
 }
@@ -1018,7 +1030,8 @@ a.sticker:hover {
   right: 1.25rem;
   bottom: 1.25rem;
   font-family: var(--font-accent);
-  font-size: 1.4rem;
+  font-size: 1.05rem;
+  font-weight: 700;
   transform: rotate(8deg);
 }
 
@@ -1119,6 +1132,7 @@ a.sticker:hover {
 
 .tools__title {
   margin-bottom: 1rem;
+  opacity: 0.9;
 }
 
 .pills {
@@ -1198,7 +1212,7 @@ a.sticker:hover {
 
 .contact__heading {
   margin: 0 0 0.6rem;
-  font-family: var(--font-title);
+  font-family: var(--font-base);
   font-size: 0.875rem;
   font-weight: 600;
 }
@@ -1316,7 +1330,7 @@ a.sticker:hover {
 }
 
 .footer__first {
-  font-family: var(--font-title);
+  font-family: var(--font-base);
   font-size: clamp(1.5rem, 3vw, 2.1rem);
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -1326,8 +1340,8 @@ a.sticker:hover {
 .footer__last {
   color: var(--accent);
   font-family: var(--font-accent);
-  font-size: clamp(2.5rem, 5vw, 3.25rem);
-  font-weight: 600;
+  font-size: clamp(1.87rem, 3.74vw, 2.43rem);
+  font-weight: 700;
   line-height: 1;
 }
 
@@ -1351,7 +1365,7 @@ a.sticker:hover {
 
 .footer__heading {
   margin: 0 0 0.4rem;
-  font-family: var(--font-title);
+  font-family: var(--font-base);
   font-size: 0.875rem;
   font-weight: 600;
 }
@@ -1478,7 +1492,7 @@ a.sticker:hover {
 }
 
 .summary__label {
-  font-family: var(--font-title);
+  font-family: var(--font-base);
   font-size: 0.875rem;
   font-weight: 600;
 }
@@ -1530,6 +1544,68 @@ a.sticker:hover {
   text-align: center;
 }
 
+.gallery--site {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
+  gap: 1.5rem 1.25rem;
+}
+
+.gallery--site .gallery__link {
+  aspect-ratio: 4 / 5;
+}
+
+.gallery--site .gallery__image {
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.gallery__item--featured {
+  grid-column: span 2;
+}
+
+.lightbox {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 4rem 1rem 2rem;
+  overflow-y: auto;
+  border: 0;
+  background: transparent;
+}
+
+.lightbox[open] {
+  display: grid;
+}
+
+.lightbox::backdrop {
+  background: rgb(0 0 0 / 0.9);
+}
+
+.lightbox__image {
+  width: auto;
+  max-width: min(100%, 50rem);
+  margin: auto;
+  border-radius: 1rem;
+}
+
+.lightbox__close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
 .pager {
   display: flex;
   flex-wrap: wrap;
@@ -1550,6 +1626,31 @@ a.sticker:hover {
   .gallery--screens {
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem 2rem;
+  }
+
+  .gallery--site {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 1.5rem;
+  }
+
+  .gallery__item--featured {
+    grid-row: span 2;
+  }
+
+  .gallery__item--featured .gallery__link {
+    flex: 1;
+    aspect-ratio: auto;
+  }
+
+  .gallery__item--featured .gallery__image {
+    height: 0;
+    min-height: 100%;
+  }
+}
+
+@media (min-width: 60em) {
+  .gallery--site {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

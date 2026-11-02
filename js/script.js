@@ -7,6 +7,7 @@ const texts = {
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
     mailSubject: "Message de ",
+    closeImage: "Fermer l'image",
     locale: "fr-FR",
   },
   en: {
@@ -15,6 +16,7 @@ const texts = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     mailSubject: "Message from ",
+    closeImage: "Close image",
     locale: "en-GB",
   },
 };
@@ -92,4 +94,41 @@ if (updatedDate) {
   const modified = new Date(document.lastModified);
   updatedDate.dateTime = modified.toISOString().slice(0, 10);
   updatedDate.textContent = modified.toLocaleDateString(text.locale, dateOptions);
+}
+
+const galleryLinks = document.querySelectorAll(".gallery__link");
+
+if (galleryLinks.length > 0) {
+  const lightbox = document.createElement("dialog");
+  const lightboxImage = document.createElement("img");
+  const lightboxClose = document.createElement("button");
+
+  lightbox.className = "lightbox";
+  lightboxImage.className = "lightbox__image";
+  lightboxClose.className = "lightbox__close";
+  lightboxClose.type = "button";
+  lightboxClose.textContent = "×";
+  lightboxClose.setAttribute("aria-label", text.closeImage);
+
+  lightbox.append(lightboxClose, lightboxImage);
+  document.body.append(lightbox);
+
+  galleryLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      lightboxImage.src = link.href;
+      lightboxImage.alt = link.querySelector("img").alt;
+      lightbox.showModal();
+    });
+  });
+
+  lightbox.addEventListener("click", function (event) {
+    if (event.target === lightbox) {
+      lightbox.close();
+    }
+  });
+
+  lightboxClose.addEventListener("click", function () {
+    lightbox.close();
+  });
 }
